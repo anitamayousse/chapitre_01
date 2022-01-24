@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react";
 import './App.css';
 import Box from "./components/Box";
-import Styles from "./styles/global.css"
+import styles from "./styles/global.css"
 const tempMin = -20;
 const tempMax = 40;
 const heartMin = 80;
@@ -15,20 +15,10 @@ class App extends React.Component {
       <div className="container-fluid">
         <div className="row">
         <h1 className="text-primary">Hello !</h1>
-          <p>
-          Heart : {heartMin}
-          </p>
-          <p>
-          Temperature : {tempMin}
-          </p>
-          <p>
-          <Box icon="local_drink" color = "#3A85FF" value = "1.5" unit = "L" > </Box> Steps : {stepsMin} 
-          </p>
-          <Box>Water</Box>
-          <Box>Steps</Box>
-          <Box>Heart</Box>
-          <Box>Temperature</Box>
-          
+          <Box icon="local_drink" color = "#3A85FF" value = "1.5" unit = "L" className={styles.box1} > Water :  </Box>
+          <Box icon="directions_walk" color = "black" value = "3000" unit = "steps" className={styles.box2}> Steps: {stepsMin}</Box>
+          <Box icon="wb_sunny" color = "yellow" value = "-10" unit = "°C" className={styles.box1}>Temperature: {tempMin} </Box>
+          <Box icon="favorite" color = "red" value = "120" unit = "bpm" className={styles.box2}>Heart: {heartMin} </Box>
         </div>
       </div>
     );
