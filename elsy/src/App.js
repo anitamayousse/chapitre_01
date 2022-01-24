@@ -1,7 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react";
 import './App.css';
-import Steps from "./components/Steps";
+import Box from "./components/Box";
+import Styles from "./styles/global.css"
 const tempMin = -20;
 const tempMax = 40;
 const heartMin = 80;
@@ -21,8 +22,13 @@ class App extends React.Component {
           Temperature : {tempMin}
           </p>
           <p>
-          <Steps> </Steps> Steps : {stepsMin} 
+          <Box icon="local_drink" color = "#3A85FF" value = "1.5" unit = "L" > </Box> Steps : {stepsMin} 
           </p>
+          <Box>Water</Box>
+          <Box>Steps</Box>
+          <Box>Heart</Box>
+          <Box>Temperature</Box>
+          
         </div>
       </div>
     );
