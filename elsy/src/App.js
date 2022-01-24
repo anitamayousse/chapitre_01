@@ -1,6 +1,8 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react";
 import './App.css';
+import "./components/Steps"
+import Steps from "./components/Steps";
 const tempMin = -20;
 const tempMax = 40;
 const heartMin = 80;
@@ -15,7 +17,7 @@ class App extends React.Component {
           <p>
           Heart : {heartMin}
           Temperature : {tempMin}
-          Steps : {stepsMin}
+          <Steps> </Steps> Steps : {stepsMin} 
           </p>
         </div>
         <h1 className="text-primary">Hello !</h1>
