@@ -1,8 +1,8 @@
-.box1{
-    color: #cccccc;
+.box:nth-child(even){
+    background-color: #cccccc;
 }
-.box2{
-    color: #cccccc;
+.box:nth-child(odd){
+    background-color: #aaaa;
 }
 .box{
     height: 190px;

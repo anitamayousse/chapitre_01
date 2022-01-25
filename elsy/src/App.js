@@ -15,10 +15,14 @@ class App extends React.Component {
       <div className="container-fluid">
         <div className="row">
         <h1 className="text-primary">Hello !</h1>
-          <Box icon="local_drink" color = "#3A85FF" value = "1.5" unit = "L" className={styles.box1} > Water :  </Box>
-          <Box icon="directions_walk" color = "black" value = "3000" unit = "steps" className={styles.box2}> Steps: {stepsMin}</Box>
-          <Box icon="wb_sunny" color = "yellow" value = "-10" unit = "°C" className={styles.box1}>Temperature: {tempMin} </Box>
-          <Box icon="favorite" color = "red" value = "120" unit = "bpm" className={styles.box2}>Heart: {heartMin} </Box>
+        {/*water box */}
+          <Box icon="local_drink" color = "#3A85FF" value = {1.5} unit = "L" />
+        {/*steps box */}
+          <Box icon="directions_walk" color = "black" value = {3000} unit = "steps" > Steps: {stepsMin}</Box>
+        {/*temperature box */}
+          <Box icon="wb_sunny" color = "yellow" value = {-10} unit = "°C" >Temperature: {tempMin} </Box>
+        {/*heart box */}
+          <Box icon="favorite" color = "red" value = {120} unit = "bpm" >Heart: {heartMin} </Box>
         </div>
       </div>
     );
