@@ -14,13 +14,17 @@ class App extends React.Component {
   super ();
   
   this.state = {
-    water : 0,
-    heart : 120,
+    water : this.state.water,
+    heart : this.state.value,
     temperature : -10,
     steps  : 3000
   };
-
+  this.onHeartChange = this.onHeartChange.bind(this);
   }
+onHeartChange(e){
+  e.onInput();
+  console.log(e.target.value, this.state.heart);
+}
   render() {
     return (
       <div className="container-fluid">
@@ -34,7 +38,7 @@ class App extends React.Component {
         {/*temperature box */}
           <Box icon="wb_sunny" color = "yellow" value = {-10} unit = "°C" >Temperature: {tempMin} </Box>
         {/*heart box */}
-          <Box icon="favorite" color = "red" value = {120} unit = "bpm" >Heart: {heartMin} </Box>
+          <Box icon="favorite" color = "red" value = {this.setState.heart} unit = "bpm" >Heart: {heartMin} </Box>
         </div>
       </div>
     );

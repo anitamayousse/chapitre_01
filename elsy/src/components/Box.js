@@ -13,10 +13,14 @@ class Box extends React.Component {
             </div>,
             <div>
             <input
-            onChange={this.handleChange}
             onInput={this.props.value}
-            type="range" id="volume" name="volume"
-            min="0" max="11" />
+            type="range"
+            min={this.props.heartMin} max={this.props.heartMax} 
+            onChange={(e) => {
+                this.setState({
+                    onHeartChange: e.target.value,
+                });
+            }}/>
             </div>
         )
     }
