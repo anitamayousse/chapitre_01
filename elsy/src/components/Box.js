@@ -3,28 +3,24 @@ class Box extends React.Component {
 
     render()
     {
-          if (this.props.icon !== "local_drink" ) { 
         return (
             <div className="box col-sm-3 col-6">
                 <span className="material-icons" style={{color: this.props.color,fontSize: 100}}>
                 {this.props.icon} 
                 </span>
                 <p>{this.props.value}{this.props.unit}</p>
-            </div>,
-            <div>
+            {this.props.icon === "local_drink" ? null : (
             <input
-            onInput={this.props.value}
+            value={this.props.value}
             type="range"
             min={this.props.heartMin} max={this.props.heartMax} 
-            onChange={(e) => {
-                this.setState({
-                    onHeartChange: e.target.value,
-                });
-            }}/>
+            onChange={this.props.onChange}
+            />
+            )}
             </div>
         )
     }
     }
-}
+
 
 export default Box
