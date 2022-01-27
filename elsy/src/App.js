@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import React from "react";
 import './App.css';
 import Box from "./components/Box";
-import styles from "./styles/global.css"
+import "./styles/global.css"
 const tempMin = -20;
 const tempMax = 40;
 const heartMin = 80;
@@ -19,45 +19,24 @@ class App extends React.Component {
     temperature : -10,
     steps  : 3000
   };
-  this.renderSlider = this.renderSlider.bind(this);
-  }
 
-
-  renderSlider() {
-    let input;
-      if (Box !== this.state.water) { 
-        input = 
-        <div>
-        <input
-        onChange={this.handleChange}
-        value={this.state.inputText} typeof="range" />
-        </div>;
-          return input;
-      } else { 
-          return (
-              <section>
-              </section>
-          );
-      }
   }
   render() {
     return (
-      <>
-      {this.renderSlider()}
       <div className="container-fluid">
         <div className="row">
         <h1 className="text-primary">Hello !</h1>
         {/*water box */}
           <Box icon="local_drink" color = "#3A85FF" value = {1.5} unit = "L" />
         {/*steps box */}
-          <Box icon="directions_walk" color = "black" value = {3000} unit = "steps" > Steps: {stepsMin}</Box>
+          <Box icon="directions_walk" color = "black" value = {3000} unit = "steps" > Steps: {stepsMin}
+          </Box>
         {/*temperature box */}
           <Box icon="wb_sunny" color = "yellow" value = {-10} unit = "°C" >Temperature: {tempMin} </Box>
         {/*heart box */}
           <Box icon="favorite" color = "red" value = {120} unit = "bpm" >Heart: {heartMin} </Box>
         </div>
       </div>
-      </>
     );
   }
 }
