@@ -10,8 +10,40 @@ const heartMax = 180;
 const stepsMin = 0;
 const stepsMax = 50000;
 class App extends React.Component {
+  constructor () {
+  super ();
+  
+  this.state = {
+    water : 0,
+    heart : 120,
+    temperature : -10,
+    steps  : 3000
+  };
+  this.renderSlider = this.renderSlider.bind(this);
+  }
+
+
+  renderSlider() {
+    let input;
+      if (Box !== this.state.water) { 
+        input = 
+        <div>
+        <input
+        onChange={this.handleChange}
+        value={this.state.inputText} typeof="range" />
+        </div>;
+          return input;
+      } else { 
+          return (
+              <section>
+              </section>
+          );
+      }
+  }
   render() {
     return (
+      <>
+      {this.renderSlider()}
       <div className="container-fluid">
         <div className="row">
         <h1 className="text-primary">Hello !</h1>
@@ -25,6 +57,7 @@ class App extends React.Component {
           <Box icon="favorite" color = "red" value = {120} unit = "bpm" >Heart: {heartMin} </Box>
         </div>
       </div>
+      </>
     );
   }
 }
